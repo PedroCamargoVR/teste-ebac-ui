@@ -1,0 +1,24 @@
+{
+  "name": "teste-ebac-ui",
+  "version": "1.0.0",
+  "description": "Repository created for storing and sharing my UI Automation Test Projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroCamargoVR/teste-ebac-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroCamargoVR/teste-ebac-ui/issues"
+  },
+  "homepage": "https://github.com/PedroCamargoVR/teste-ebac-ui#readme",
+  "devDependencies": {
+    "cypress": "^10.9.0"
+  }
+}
