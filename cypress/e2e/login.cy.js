@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-var faker = required('faker');
 
 context('Testes da funcionalidade de login',()=>{
 
