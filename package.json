@@ -20,5 +20,8 @@
   "homepage": "https://github.com/PedroCamargoVR/teste-ebac-ui#readme",
   "devDependencies": {
     "cypress": "^10.9.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.5.0"
   }
 }

@@ -1,9 +1,13 @@
 /// <reference types="cypress" />
+var faker = required('faker');
 
 context('Testes da funcionalidade de login',()=>{
+
+  beforeEach(() => {
+    cy.visit("http://lojaebac.ebaconline.art.br/minha-conta/");
+  });
     
   it('Deve realizar o login corretamente',() =>{
-    cy.visit("http://lojaebac.ebaconline.art.br/minha-conta/");
     cy.get('#username').type("aluno_ebac@teste.com");
     cy.get('#password').type("teste@teste.com");
     cy.get('.woocommerce-form > .button').click();
@@ -12,15 +16,13 @@ context('Testes da funcionalidade de login',()=>{
   })
 
   it('Deve exibir mensagem de erro ao clicar em realizar login sem inserir usuário e senha',() =>{
-    cy.visit("http://lojaebac.ebaconline.art.br/minha-conta/");
     cy.get('.woocommerce-form > .button').click();
 
     cy.get('.woocommerce-error > li').should('contain','Erro: Nome de usuário é obrigatório')      
   })
 
   it('Deve exibir mensagem de erro ao inserir usuario inválido',() =>{
-    cy.visit("http://lojaebac.ebaconline.art.br/minha-conta/");
-    cy.get('#username').type("aluno_ebac@teste.com");
+     cy.get('#username').type("aluno_ebac@teste.com");
     cy.get('#password').type("teste@teste"); //Senha Inválida
     cy.get('.woocommerce-form > .button').click();
 
@@ -28,7 +30,6 @@ context('Testes da funcionalidade de login',()=>{
   })
 
   it('Deve exibir mensagem de erro ao inserir usuario inválido',() =>{
-    cy.visit("http://lojaebac.ebaconline.art.br/minha-conta/");
     cy.get('#username').type("aluno_ebac@teste"); //Usuário Inválido
     cy.get('#password').type("teste@teste.com");
     cy.get('.woocommerce-form > .button').click();
